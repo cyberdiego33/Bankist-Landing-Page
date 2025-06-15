@@ -6,7 +6,163 @@
     <title>Bankist Tailwind Project</title>
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <h1 class="bg-blue-600 text-primary">hello World</h1>
+  <body class="px-6 bg-[#f3f3f3] relative text-[#444]">
+    <header
+      class="flex justify-between items-center px-4 lg:px-12 py-6 sticky top-0 bg-[#f3f3f3]/90"
+    >
+      <div>
+        <div class="w-[150px] h-11">
+          <img class="size-full object-cover" src="img/logo.png" alt="" />
+        </div>
+      </div>
+      <nav class="hidden sm:flex space-x-3 items-center md:text-lg">
+        <div class="space-x-3">
+          <a href="#feature">Features</a>
+          <a href="#operations">Operation</a>
+          <a href="#testimonials">Testimonials</a>
+        </div>
+        <div>
+          <a
+            class="w-[150px] h-11 p-4 rounded-full md:text-lg bg-[#4bbb7d]"
+            href=""
+          >
+            Open account</a
+          >
+        </div>
+      </nav>
+
+      <nav class="size-[20px] flex flex-col justify-between sm:hidden">
+        <div class="h-[3px] bg-[#444]"></div>
+        <div class="h-[3px] bg-[#444]"></div>
+        <div class="h-[3px] bg-[#444]"></div>
+      </nav>
+    </header>
+    <main>
+      <section class="xl:flex max-w-[1150px] mx-auto justify-between py-10">
+        <div class="space-y-5 sm:space-y-10">
+          <h1
+            class="text-4xl leading-14 sm:text-6xl font-semibold sm:leading-22"
+          >
+            When
+            <!-- Green highlight effect -->
+            <span class="highlight bg-gradient-to-t from-[#39b385] to-[#9be15d]"
+              >banking</span
+            >
+            meets<br />
+            <span class="highlight bg-gradient-to-t from-[#39b385] to-[#9be15d]"
+              >minimalist</span
+            >
+          </h1>
+          <h4 class="font-semibold text-xl sm:text-2xl">
+            A simpler banking experience for a simpler life.
+          </h4>
+          <button class="text-xl text-[#39b385]">Learn more &DownArrow;</button>
+        </div>
+        <div
+          class="mt-16 w-full max-w-[730px] mx-auto xl:m-0 xl:w-[460px] h-[370px]"
+        >
+          <img src="img/hero.png" class="size-full xl:object-cover" alt="" />
+        </div>
+      </section>
+      <div class="h-[1px] bg-gray-400"></div>
+
+      <section class="py-16">
+        <div class="max-w-[800px] mx-auto pb-20">
+          <h2 class="uppercase text-[#4bbb7d] text-xl font-semibold mb-5">
+            Features
+          </h2>
+          <h3 class="text-5xl">Everything you need in modern bank and more</h3>
+        </div>
+
+        <div class="max-w-[1210px] mx-auto">
+          <div class="lg:flex">
+            <div class="max-w-[585px] sm:min-w-[585px] mb-10">
+              <img
+                src="img/digital-lazy.jpg"
+                data-src="img/digital.jpg"
+                alt="Computer"
+                class="size-full object-cover"
+              />
+            </div>
+
+            <div class="max-w-[410px] lg:mx-auto mb-10 lg:mb-0 space-y-6">
+              <div class="features__icon">
+                <div
+                  class="size-[55px] flex justify-center items-center rounded-full bg-[#5ec576]/60 text-[#4bbb7d]"
+                >
+                  <svg class="size-[25px]">
+                    <use xlink:href="img/icons.svg#icon-monitor"></use>
+                  </svg>
+                </div>
+              </div>
+              <h5 class="text-xl font-semibold">100% digital bank</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+                alias sint quos? Accusantium a fugiat porro reiciendis saepe
+                quibusdam debitis ducimus.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:flex lg:flex-row-reverse ">
+            <div class="max-w-[585px] sm:min-w-[585px] mb-10">
+              <img
+                src="img/grow-lazy.jpg"
+                data-src="img/grow.jpg"
+                alt="Plant"
+                class="size-full object-cover"
+              />
+            </div>
+
+            <div class="max-w-[410px] lg:mx-auto mb-10 lg:mb-0 space-y-6">
+              <div class="features__icon">
+                <div
+                  class="size-[55px] flex justify-center items-center rounded-full bg-[#5ec576]/60 text-[#4bbb7d]"
+                >
+                  <svg class="size-[25px]">
+                    <use xlink:href="img/icons.svg#icon-trending-up"></use>
+                  </svg>
+                </div>
+              </div>
+              <h5 class="text-xl font-semibold">Watch your money grow</h5>
+              <p>
+                Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
+                inventore ab? Nulla incidunt eius numquam sequi iste pariatur
+                quibusdam!
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:flex">
+            <div class="max-w-[585px] sm:min-w-[585px] mb-10">
+              <img
+                src="img/card-lazy.jpg"
+                data-src="img/card.jpg"
+                alt="Credit card"
+                class="size-full object-cover"
+              />
+            </div>
+
+            <div class="max-w-[410px] lg:mx-auto mb-10 lg:mb-0 space-y-6">
+              <div class="features__icon">
+                <div
+                  class="size-[55px] flex justify-center items-center rounded-full bg-[#5ec576]/60 text-[#4bbb7d]"
+                >
+                  <svg class="size-[25px]">
+                    <use xlink:href="img/icons.svg#icon-credit-card"></use>
+                  </svg>
+                </div>
+              </div>
+              <h5 class="text-xl font-semibold">Free debit card included</h5>
+              <p>
+                Quasi, fugit in cumque cupiditate reprehenderit debitis animi
+                enim eveniet consequatur odit quam quos possimus assumenda dicta
+                fuga inventore ab.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
