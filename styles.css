@@ -15,6 +15,22 @@
   --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
 }
 
+.lazy-img {
+  filter: blur(20px);
+}
+
 .operation-svg {
   fill: var(--color-secondary-darker);
+}
+
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  top: -5.7rem;
+  left: -6.8rem;
+  line-height: 1;
+  font-size: 20rem;
+  font-family: inherit;
+  color: var(--color-primary);
+  z-index: -1;
 }
