@@ -1,10 +1,12 @@
-// Open and Close Modal 
+// Open and Close Modal
 
 const modal = document.querySelector(".modal");
 
 document.querySelectorAll(".openModal").forEach((close) => {
   // console.log(close);
-  close.addEventListener("click", () => {
+
+  close.addEventListener("click", (e) => {
+    e.preventDefault();
     modal.classList.remove("hidden");
     modal.classList.add("flex");
   });
@@ -20,7 +22,7 @@ document.querySelectorAll("#closeModal").forEach((close) => {
   });
 });
 
-// Learn More Scroll to Feature 
+// Learn More Scroll to Feature
 
 const btnFeature = document.querySelector("#btnScrolltoFeature");
 const features = document.querySelector("#features");
@@ -29,9 +31,8 @@ btnFeature.addEventListener("click", (e) => {
   features.scrollIntoView({ behavior: "smooth" });
 });
 
-
-// Navigate To Each Section 
-const navBar = document.querySelector("#navBar")
+// Navigate To Each Section
+const navBar = document.querySelector("#navBar");
 navBar.addEventListener("click", (e) => {
   if (e.target.tagName === "A") {
     const target = document.querySelector(e.target.getAttribute("href"));
@@ -42,8 +43,7 @@ navBar.addEventListener("click", (e) => {
   }
 });
 
-
-// Display Tabs Section 
+// Display Tabs Section
 
 const clickTabs = document.querySelector("#clicktabs");
 const tabs = document.querySelectorAll(".tab");
@@ -75,34 +75,31 @@ clickTabs.addEventListener("click", (e) => {
 
 // reduce Nav links opacity
 
-
-
-// Sticky NavBar ONscroll 
+// Sticky NavBar ONscroll
 
 const navContainer = document.querySelector("#nav-container");
-// features is already selected = feature 
+// features is already selected = feature
 const heroSection = document.querySelector("#hero-section");
 const navHeight = navContainer.getBoundingClientRect().height;
-
 
 const obsOption = {
   root: null,
   threshold: 0,
-  rootMargin: `-${navHeight}px`
-}
+  rootMargin: `-${navHeight}px`,
+};
 
-const obsCallback = function(obsOption) {
+const obsCallback = function (obsOption) {
   const [threshold] = obsOption;
   // console.log(threshold);
 
   if (threshold.isIntersecting === false) {
-    navContainer.classList.add("sticky")
+    navContainer.classList.add("sticky");
     // console.log(navHeight);
   } else {
-    navContainer.classList.remove("sticky")
+    navContainer.classList.remove("sticky");
   }
-}
+};
 
-const observerNav = new IntersectionObserver(obsCallback, obsOption)
+const observerNav = new IntersectionObserver(obsCallback, obsOption);
 
-observerNav.observe(heroSection)
+observerNav.observe(heroSection);
