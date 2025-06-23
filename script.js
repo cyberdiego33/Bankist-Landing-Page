@@ -22,6 +22,8 @@ document.querySelectorAll("#closeModal").forEach((close) => {
   });
 });
 
+
+///////////////////////////////////////////////////////
 // Learn More Scroll to Feature
 
 const btnFeature = document.querySelector("#btnScrolltoFeature");
@@ -43,6 +45,8 @@ navBar.addEventListener("click", (e) => {
   }
 });
 
+
+/////////////////////////////////////////////////////////
 // Display Tabs Section
 
 const clickTabs = document.querySelector("#clicktabs");
@@ -73,26 +77,31 @@ clickTabs.addEventListener("click", (e) => {
   });
 });
 
+
+//////////////////////////////////////////////////////
 // reduce Nav links opacity
 
 const opacityFunc = function (e) {
   arrayLinks.forEach((link) => {
-    link.classList.add("opacity-60")
+    link.classList.add("opacity-60");
     if (link === e.target) {
       link.classList.remove(`${this}`);
     }
-  })
-}
+  });
+};
 
-const arrayLinks = navBar.querySelectorAll("a")
-navBar.addEventListener("mouseover", opacityFunc.bind( `opacity-60`))
+const arrayLinks = navBar.querySelectorAll("a");
+navBar.addEventListener("mouseover", opacityFunc.bind(`opacity-60`));
 
-navBar.addEventListener("mouseout", (e) => {
+// navBar is already selected
+navBar.addEventListener("mouseout", () => {
   arrayLinks.forEach((link) => {
-    link.classList.remove("opacity-60")
-  })
-})
+    link.classList.remove("opacity-60");
+  });
+});
 
+
+//////////////////////////////////////////////
 // Sticky NavBar ONscroll
 
 const navContainer = document.querySelector("#nav-container");
@@ -121,3 +130,30 @@ const obsCallback = function (obsOption) {
 const observerNav = new IntersectionObserver(obsCallback, obsOption);
 
 observerNav.observe(heroSection);
+
+/////////////////////////////////////////////////////////
+// Revealing Element OnScroll
+const allSection = document.querySelectorAll("section");
+
+const secCallback = function ([ threshold ]) {
+  if (threshold.isIntersecting) {
+    threshold.target.classList.remove("opacity-0", "translate-y-[6rem]")
+    console.log(threshold.target);
+
+    sectionObserver.unobserve(threshold.target)
+  }
+};
+
+const secOptions = {
+  root: null,
+  threshold: 0.2,
+};
+
+const sectionObserver = new IntersectionObserver(secCallback, secOptions);
+allSection.forEach((section) => {
+  if (section.id != "hero-section") {
+    section.classList.add("opacity-0", "translate-y-[6rem]");
+    sectionObserver.observe(section);
+    // console.log(section);
+  }
+});
