@@ -75,6 +75,24 @@ clickTabs.addEventListener("click", (e) => {
 
 // reduce Nav links opacity
 
+const opacityFunc = function (e) {
+  arrayLinks.forEach((link) => {
+    link.classList.add("opacity-60")
+    if (link === e.target) {
+      link.classList.remove(`${this}`);
+    }
+  })
+}
+
+const arrayLinks = navBar.querySelectorAll("a")
+navBar.addEventListener("mouseover", opacityFunc.bind( `opacity-60`))
+
+navBar.addEventListener("mouseout", (e) => {
+  arrayLinks.forEach((link) => {
+    link.classList.remove("opacity-60")
+  })
+})
+
 // Sticky NavBar ONscroll
 
 const navContainer = document.querySelector("#nav-container");
