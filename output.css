@@ -368,6 +368,10 @@
     --tw-translate-y: calc(50% * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .translate-y-\[-26\%\] {
+    --tw-translate-y: -26%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -477,6 +481,9 @@
   .bg-\[\#5ec576\]\/60 {
     background-color: color-mix(in oklab, #5ec576 60%, transparent);
   }
+  .bg-\[\#5ec5763a\] {
+    background-color: #5ec5763a;
+  }
   .bg-\[\#00000080\] {
     background-color: #00000080;
   }
@@ -495,11 +502,14 @@
   .bg-\[\#fd424b\] {
     background-color: #fd424b;
   }
+  .bg-\[\#ff58602d\] {
+    background-color: #ff58602d;
+  }
   .bg-\[\#ffbb00\] {
     background-color: #ffbb00;
   }
-  .bg-\[\#ffcb03\]\/60 {
-    background-color: color-mix(in oklab, #ffcb03 60%, transparent);
+  .bg-\[\#ffcd0331\] {
+    background-color: #ffcd0331;
   }
   .bg-\[\#ffffffb3\] {
     background-color: #ffffffb3;
@@ -527,9 +537,6 @@
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
-  }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -560,9 +567,6 @@
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
-  }
-  .py-10 {
-    padding-block: calc(var(--spacing) * 10);
   }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
@@ -812,6 +816,12 @@
 }
 .operation-svg {
   fill: var(--color-secondary-darker);
+}
+.operation-svg-2 {
+  fill: var(--color-primary);
+}
+.operation-svg-3 {
+  fill: var(--color-tertiary);
 }
 .testimonial::before {
   content: '\201C';

@@ -8,25 +8,25 @@
     <script src="script.js" defer></script>
   </head>
   <body class="bg-[#f3f3f3] text-[#444] relative">
-    <header
-      class="flex justify-between items-center px-4 lg:px-12 py-6 sticky top-0 bg-[#f3f3f3]/90 z-50"
+    <header id="nav-container"
+      class="flex justify-between items-center px-4 lg:px-12 py-6 top-0 bg-[#f3f3f3]/90 z-50"
     >
       <div>
         <div class="w-[150px] h-11">
           <img class="size-full object-cover" src="img/logo.png" alt="" />
         </div>
       </div>
-      
+
       <nav class="hidden sm:flex space-x-3 items-center md:text-lg">
-        <div id="navBar" class="space-x-3">
+        <div id="navBar" class="space-x-3 font-semibold">
           <a href="#features">Features</a>
           <a href="#operations">Operation</a>
           <a href="#testimonials">Testimonials</a>
         </div>
         <div>
           <a
-            class="openModal w-[150px] h-11 p-4 rounded-full md:text-lg bg-[#4bbb7d]"
-            href=""
+            class="openModal w-[150px] h-11 px-4 py-2 rounded-full md:text-lg font-semibold bg-[#4bbb7d]"
+            href="#"
           >
             Open account</a
           >
@@ -38,11 +38,10 @@
         <div class="h-[3px] bg-[#444]"></div>
         <div class="h-[3px] bg-[#444]"></div>
       </nav>
-
     </header>
     <main>
-      <section
-        class="xl:flex max-w-[1150px] mx-auto justify-between py-10 px-6"
+      <section id="hero-section"
+        class="xl:flex max-w-[1150px] mx-auto justify-between py-22 px-6"
       >
         <div class="space-y-5 sm:space-y-10">
           <h1
@@ -61,7 +60,12 @@
           <h4 class="font-semibold text-xl sm:text-2xl">
             A simpler banking experience for a simpler life.
           </h4>
-          <button id="btnScrolltoFeature" class="text-xl text-[#39b385] cursor-pointer hover:underline">Learn more &DownArrow;</button>
+          <button
+            id="btnScrolltoFeature"
+            class="text-xl text-[#39b385] cursor-pointer hover:underline"
+          >
+            Learn more &DownArrow;
+          </button>
         </div>
         <div
           class="mt-16 w-full max-w-[730px] mx-auto xl:m-0 xl:w-[460px] h-[370px]"
@@ -185,24 +189,27 @@
         </div>
 
         <div class="relative p-6 pt-20 lg:p-20 max-w-[1000px] mx-auto bg-white">
-          <div class="flex justify-center space-x-6 absolute -top-5 inset-x-0">
-            <div class="bg-[#ffbb00] px-6 py-2 rounded-full">
+          <div id="clicktabs" class="flex justify-center space-x-6 absolute -top-5 inset-x-0">
+
+            <div class="bg-[#ffbb00] px-6 py-2 rounded-full tab cursor-pointer transform" data-tab="1">
               <span class="font-semibold text-black">01</span>
               <span>Instant Transfers</span>
             </div>
-            <div class="bg-[#4bbb7d] px-6 py-2 rounded-full">
-              <span class="font-semibold text-black">01</span>
-              <span>Instant Transfers</span>
+
+            <div class="bg-[#4bbb7d] px-6 py-2 rounded-full tab cursor-pointer transform translate-y-[-26%]" data-tab="2">
+              <span class="font-semibold text-black">02</span>
+              <span>Instant Loan</span>
             </div>
-            <div class="bg-[#fd424b] px-6 py-2 rounded-full">
-              <span class="font-semibold text-black">01</span>
-              <span>Instant Transfers</span>
+
+            <div class="bg-[#fd424b] px-6 py-2 rounded-full tab cursor-pointer transform" data-tab="3">
+              <span class="font-semibold text-black">03</span>
+              <span>Instant Closing</span>
             </div>
           </div>
 
-          <div class="flex items-start space-x-8">
+          <div class="tabsContent tabsContent-1 flex items-start space-x-8">
             <div
-              class="p-[15px] rounded-full hidden sm:flex items-center justify-center bg-[#ffcb03]/60"
+              class="p-[15px] rounded-full hidden sm:flex items-center justify-center bg-[#ffcd0331]"
             >
               <svg class="size-[28px] operation-svg">
                 <use xlink:href="img/icons.svg#icon-upload"></use>
@@ -221,6 +228,51 @@
               </h3>
             </div>
           </div>
+
+          <div class="tabsContent tabsContent-2 hidden  items-start space-x-8">
+            <div
+              class="p-[15px] rounded-full hidden sm:flex items-center justify-center bg-[#5ec5763a]"
+            >
+              <svg class="size-[28px] operation-svg-2">
+              <use xlink:href="img/icons.svg#icon-home"></use>
+            </svg>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold mb-4">
+                Buy a home or make your dreams come true, with instant loans.
+              </h2>
+              <h3>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </h3>
+            </div>
+          </div>
+
+          <div class="tabsContent tabsContent-3 hidden  items-start space-x-8">
+            <div
+              class="p-[15px] rounded-full hidden sm:flex items-center justify-center bg-[#ff58602d]"
+            >
+              <svg class="size-[28px] operation-svg-3">
+                <use xlink:href="img/icons.svg#icon-user-x"></use>
+              </svg>
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-xl font-semibold mb-4">
+                No longer need your account? No problem! Close it instantly.
+              </h2>
+              <h3>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat.
+              </h3>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -289,7 +341,9 @@
             The best day to join Bankist was a year ago. The second best is
             Today
           </h1>
-          <button class="openModal text-black bg-[#4bbb7d] px-7 rounded-full py-3">
+          <button
+            class="openModal text-black bg-[#4bbb7d] px-7 rounded-full py-3"
+          >
             Open your free account today
           </button>
         </div>

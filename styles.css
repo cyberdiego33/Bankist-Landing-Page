@@ -23,6 +23,13 @@
   fill: var(--color-secondary-darker);
 }
 
+.operation-svg-2 {
+  fill: var(--color-primary);
+}
+.operation-svg-3 {
+  fill: var(--color-tertiary)
+}
+
 .testimonial::before {
   content: '\201C';
   position: absolute;
