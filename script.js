@@ -138,7 +138,7 @@ const allSection = document.querySelectorAll("section");
 const secCallback = function ([ threshold ]) {
   if (threshold.isIntersecting) {
     threshold.target.classList.remove("opacity-0", "translate-y-[6rem]")
-    console.log(threshold.target);
+    // console.log(threshold.target);
 
     sectionObserver.unobserve(threshold.target)
   }
@@ -157,3 +157,38 @@ allSection.forEach((section) => {
     // console.log(section);
   }
 });
+
+
+
+///////////////////////////////////////////////
+// Lazy Loading Images 
+
+const AllLazyImg = document.querySelectorAll("img[data-src]");
+
+
+const imgOption = {
+  root: null,
+  threshold: 0,
+}
+
+const imgCallBack = function([threshold]) {
+  // console.log(threshold);
+
+  if (threshold.isIntersecting) {
+    threshold.target.src = threshold.target.dataset.src;
+
+    threshold.target.addEventListener("load", () => threshold.target.classList.remove("blur"))
+    // console.log(threshold.target.dataset.src);
+
+    imgObserver.unobserve(threshold.target)
+  }
+}
+
+const imgObserver = new IntersectionObserver(imgCallBack, imgOption);
+
+AllLazyImg.forEach(img => imgObserver.observe(img))
+// AllLazyImg.forEach(img => console.log(img))
+
+
+////////////////////////////////////////////////////
+// Slider Component 
