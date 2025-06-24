@@ -278,7 +278,7 @@
 
       <div class="h-[1px] absolute inset-x-0 bg-gray-400"></div>
 
-      <section id="testimonials" class="py-22 px-6 transform transition-transform duration-700">
+      <section id="testimonials" class="py-22 px-6 transform transition-transform duration-700 overflow-hidden">
         <div class="max-w-[800px] mx-auto pb-20">
           <h2 class="uppercase text-[#4bbb7d] text-xl font-semibold mb-5">
             Not sure yet?
@@ -288,10 +288,10 @@
           </h3>
         </div>
 
-        <div class="slider max-w-[1000px] h-[500px] mx-auto relative">
+        <div class="slider max-w-[1000px] h-[500px] mx-auto relative overflow-hidden">
 
           <div
-            class="slide slide--1 absolute inset-0 flex items-center justify-center"
+            class="slide slide--1 absolute inset-0 flex items-center justify-center transition-transform duration-700"
           >
             <div class="testimonial relative max-w-[630px] ml-10">
               <h5 class="font-semibold text-xl mb-[20px]">
@@ -324,7 +324,7 @@
           </div>
 
           <div
-            class="slide slide--2 absolute inset-0 flex items-center justify-center"
+            class="slide slide--2 absolute inset-0 flex items-center justify-center transition-transform duration-700"
           >
             <div class="testimonial relative max-w-[630px] ml-10">
               <h5 class="font-semibold text-xl mb-[20px]">
@@ -356,7 +356,7 @@
           </div>
 
           <div
-            class="slide slide--3 absolute inset-0 flex items-center justify-center"
+            class="slide slide--3 absolute inset-0 flex items-center justify-center transition-transform duration-700"
           >
             <div class="testimonial relative max-w-[630px] ml-10">
               <h5 class="font-semibold text-xl mb-[20px]">
@@ -389,12 +389,12 @@
 
           </div>
 
-          <button
+          <button id="btn-left"
             class="absolute top-[50%] bg-[#ffffffb3] text-[#333] text-4xl size-[55px] left-[6%] transform -translate-[50%] pointer rounded-full z-20"
           >
             &larr;
           </button>
-          <button
+          <button id="btn-right"
             class="absolute top-[50%] bg-[#ffffffb3] text-[#333] text-4xl size-[55px] right-[6%] transform -translate-[50%] pointer rounded-full z-20"
           >
             &rarr;

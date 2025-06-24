@@ -22,7 +22,6 @@ document.querySelectorAll("#closeModal").forEach((close) => {
   });
 });
 
-
 ///////////////////////////////////////////////////////
 // Learn More Scroll to Feature
 
@@ -44,7 +43,6 @@ navBar.addEventListener("click", (e) => {
     }
   }
 });
-
 
 /////////////////////////////////////////////////////////
 // Display Tabs Section
@@ -77,7 +75,6 @@ clickTabs.addEventListener("click", (e) => {
   });
 });
 
-
 //////////////////////////////////////////////////////
 // reduce Nav links opacity
 
@@ -99,7 +96,6 @@ navBar.addEventListener("mouseout", () => {
     link.classList.remove("opacity-60");
   });
 });
-
 
 //////////////////////////////////////////////
 // Sticky NavBar ONscroll
@@ -135,12 +131,12 @@ observerNav.observe(heroSection);
 // Revealing Element OnScroll
 const allSection = document.querySelectorAll("section");
 
-const secCallback = function ([ threshold ]) {
+const secCallback = function ([threshold]) {
   if (threshold.isIntersecting) {
-    threshold.target.classList.remove("opacity-0", "translate-y-[6rem]")
+    threshold.target.classList.remove("opacity-0", "translate-y-[6rem]");
     // console.log(threshold.target);
 
-    sectionObserver.unobserve(threshold.target)
+    sectionObserver.unobserve(threshold.target);
   }
 };
 
@@ -152,43 +148,81 @@ const secOptions = {
 const sectionObserver = new IntersectionObserver(secCallback, secOptions);
 allSection.forEach((section) => {
   if (section.id != "hero-section") {
-    section.classList.add("opacity-0", "translate-y-[6rem]");
+    // section.classList.add("opacity-0", "translate-y-[6rem]");
     sectionObserver.observe(section);
     // console.log(section);
   }
 });
 
-
-
 ///////////////////////////////////////////////
-// Lazy Loading Images 
+// Lazy Loading Images
 
 const AllLazyImg = document.querySelectorAll("img[data-src]");
-
 
 const imgOption = {
   root: null,
   threshold: 0,
-}
+};
 
-const imgCallBack = function([threshold]) {
+const imgCallBack = function ([threshold]) {
   // console.log(threshold);
 
   if (threshold.isIntersecting) {
     threshold.target.src = threshold.target.dataset.src;
 
-    threshold.target.addEventListener("load", () => threshold.target.classList.remove("blur"))
+    threshold.target.addEventListener("load", () =>
+      threshold.target.classList.remove("blur")
+    );
     // console.log(threshold.target.dataset.src);
 
-    imgObserver.unobserve(threshold.target)
+    imgObserver.unobserve(threshold.target);
   }
-}
+};
 
 const imgObserver = new IntersectionObserver(imgCallBack, imgOption);
 
-AllLazyImg.forEach(img => imgObserver.observe(img))
+AllLazyImg.forEach((img) => imgObserver.observe(img));
 // AllLazyImg.forEach(img => console.log(img))
 
-
 ////////////////////////////////////////////////////
-// Slider Component 
+// Slider Component
+
+const slides = document.querySelectorAll(".slide");
+const btnLeft = document.querySelector("#btn-left");
+const btnRight = document.querySelector("#btn-right");
+
+let curslide = 0;
+const maxSlide = slides.length;
+
+const gotoSlide = function (slide) {
+  slides.forEach(
+    (sl, i) => (sl.style.transform = `translateX(${100 * (i - slide)}%)`)
+  );
+};
+
+gotoSlide(0);
+
+// Next slide
+const nextSlide = function () {
+  if (curslide === maxSlide - 1) curslide = 0;
+  else curslide++;
+
+  gotoSlide(curslide);
+};
+
+// prevslide
+const prevslide = function () {
+  if (curslide === 0) curslide = maxSlide - 1;
+  else curslide--;
+
+  gotoSlide(curslide);
+};
+
+btnRight.addEventListener("click", nextSlide);
+btnLeft.addEventListener("click", prevslide);
+
+document.addEventListener("keydown", (e) => {
+  // console.log(e);
+  if (e.key === "ArrowLeft") prevslide();
+  e.key === "ArrowRight" && nextSlide();
+});
