@@ -148,7 +148,7 @@ const secOptions = {
 const sectionObserver = new IntersectionObserver(secCallback, secOptions);
 allSection.forEach((section) => {
   if (section.id != "hero-section") {
-    // section.classList.add("opacity-0", "translate-y-[6rem]");
+    section.classList.add("opacity-0", "translate-y-[6rem]");
     sectionObserver.observe(section);
     // console.log(section);
   }
