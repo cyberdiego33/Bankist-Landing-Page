@@ -22,6 +22,15 @@ document.querySelectorAll("#closeModal").forEach((close) => {
   });
 });
 
+///////////////////////////////////////////////////////////////////////////
+const mobileNavBar = document.querySelector("#mobileNav");
+
+const mobileHambuger = document
+  .querySelector("#mobileHambuger")
+  .addEventListener("click", function () {
+    mobileNavBar.classList.toggle(`h-0`);
+  });
+
 ///////////////////////////////////////////////////////
 // Learn More Scroll to Feature
 
@@ -29,6 +38,7 @@ const btnFeature = document.querySelector("#btnScrolltoFeature");
 const features = document.querySelector("#features");
 
 btnFeature.addEventListener("click", (e) => {
+  e.preventDefault();
   features.scrollIntoView({ behavior: "smooth" });
 });
 
@@ -39,6 +49,19 @@ navBar.addEventListener("click", (e) => {
     const target = document.querySelector(e.target.getAttribute("href"));
     if (target) {
       e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});
+
+const MobileNavBar = document.querySelector("#MobileNavBar");
+MobileNavBar.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") {
+    const target = document.querySelector(e.target.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      mobileNavBar.classList.toggle(`h-0`);
+
       target.scrollIntoView({ behavior: "smooth" });
     }
   }
